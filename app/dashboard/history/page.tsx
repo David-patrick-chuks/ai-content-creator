@@ -56,7 +56,7 @@ async function History() {
           ))}
         </div>
       ) : (
-        <p>No history available</p>
+        <p className="text-center">No history available</p>
       )}
     </div>
   );

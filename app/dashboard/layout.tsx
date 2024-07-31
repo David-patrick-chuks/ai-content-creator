@@ -4,6 +4,7 @@ import SideNav from "./_components/SideNav";
 import Header from "./_components/Header";
 import { TotalUsageContext } from "../(context)/TotalUsageContext";
 import { UpdateCreditUsageContext } from "../(context)/UpdateCreditUsageContext";
+import { ClerkProvider } from "@clerk/nextjs";
 
 function layout({
   children,
@@ -14,9 +15,10 @@ function layout({
   const [updateCreditUsage, setUpdateCreditUsage] = useState<any>()
 
   return (
+   
     <TotalUsageContext.Provider value={{totalUsage,setTotalUsage}}>
       <UpdateCreditUsageContext.Provider value={{updateCreditUsage, setUpdateCreditUsage}}>
-    <div className="bg-slate-100 h-screen">
+    <div className="bg-slate-100 ">
         <div className="md:w-64 hidden md:block fixed"><SideNav/></div>
         <div className="md:ml-64">
             <Header/>
@@ -24,6 +26,7 @@ function layout({
     </div>
     </UpdateCreditUsageContext.Provider>
     </TotalUsageContext.Provider>
+    
   );
 }
 
