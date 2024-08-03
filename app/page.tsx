@@ -1,12 +1,11 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const router = useRouter()
+  const router = useRouter();
   return (
-    
     <div>
       <header className="text-gray-600 body-font">
         <div className="container mx-auto flex justify-between p-5 flex-col md:flex-row items-center">
@@ -18,7 +17,10 @@ export default function Home() {
             </span>
           </div>
 
-          <button onClick={()=>router.push('/dashboard')} className="inline-flex hover:scale-105 transition-all items-center shadow-lg border hover:bg-gray-100 py-1 px-3 focus:outline-none text-white hover:text-[#8046fd] bg-[#8046fd] rounded text-lg font-mono font-bold mt-4 md:mt-0">
+          <button
+            onClick={() => router.push("/dashboard")}
+            className="inline-flex hover:scale-105 transition-all items-center shadow-lg border hover:bg-gray-100 py-1 px-3 focus:outline-none text-white hover:text-[#8046fd] bg-[#8046fd] rounded text-lg font-mono font-bold mt-4 md:mt-0"
+          >
             Get Started
             <svg
               fill="none"
@@ -42,47 +44,62 @@ export default function Home() {
               AI Content Generator Powered by SAMIR
             </h2>
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-            Generate content,keywords and descriptions with Contentful AI Content Generator
+              Generate content,keywords and descriptions with Contentful AI
+              Content Generator
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            Unlock your creative potential with our AI content generator. Designed for writers, marketers, and content creators, our advanced tool uses cutting-edge technology to generate high-quality, personalized content in seconds. Whether you need engaging blog posts, compelling ad copy, or captivating social media updates, our AI assists you every step of the way. 
+              Unlock your creative potential with our AI content generator.
+              Designed for writers, marketers, and content creators, our
+              advanced tool uses cutting-edge technology to generate
+              high-quality, personalized content in seconds. Whether you need
+              engaging blog posts, compelling ad copy, or captivating social
+              media updates, our AI assists you every step of the way.
             </p>
           </div>
-          <div className="flex flex-row flex-wrap gap-5">
-            <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60 shadow-lg rounded-lg">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="px-8 py-6 border-l-2 border-gray-200 border-opacity-60 shadow-lg rounded-lg">
               <h2 className="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">
-              Time Efficiency
+                Time Efficiency
               </h2>
               <p className="leading-relaxed text-base mb-4">
-              Save hours on content creation. Our AI generates high-quality, relevant content in seconds, allowing you to focus on other important tasks.
+                Save hours on content creation. Our AI generates high-quality,
+                relevant content in seconds, allowing you to focus on other
+                important tasks.
               </p>
             </div>
-            <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60 shadow-lg rounded-lg">
+            <div className="px-8 py-6 border-l-2 border-gray-200 border-opacity-60 shadow-lg rounded-lg">
               <h2 className="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">
-              Consistency and Quality
+                Consistency and Quality
               </h2>
               <p className="leading-relaxed text-base mb-4">
-              Maintain a consistent tone and high-quality output across all your content. The AI ensures that every piece meets your standards, providing a seamless and professional experience for your audience.
+                Maintain a consistent tone and high-quality output across all
+                your content. The AI ensures that every piece meets your
+                standards, providing a seamless and professional experience for
+                your audience.
               </p>
             </div>
-            <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60 shadow-lg  rounded-lg">
+            <div className="px-8 py-6 border-l-2 border-gray-200 border-opacity-60 shadow-lg rounded-lg">
               <h2 className="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">
-              Cost-Effective
+                Cost-Effective
               </h2>
               <p className="leading-relaxed text-base mb-4">
-              Reduce the need for extensive human resources. With our AI content generator, you get premium content without the high costs associated with hiring multiple writers and editors.
+                Reduce the need for extensive human resources. With our AI
+                content generator, you get premium content without the high
+                costs associated with hiring multiple writers and editors.
               </p>
             </div>
-            <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60 shadow-lg rounded-lg ">
+            <div className="px-8 py-6 border-l-2 border-gray-200 border-opacity-60 shadow-lg rounded-lg">
               <h2 className="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">
-              Versatility
+                Versatility
               </h2>
               <p className="leading-relaxed text-base mb-4">
-              Adapt to any content need, from blog posts and social media updates to marketing copy and SEO articles. The AI is designed to handle diverse content requirements, making it a one-stop solution for all your writing needs.
+                Adapt to any content need, from blog posts and social media
+                updates to marketing copy and SEO articles. The AI is designed
+                to handle diverse content requirements, making it a one-stop
+                solution for all your writing needs.
               </p>
             </div>
           </div>
-          
         </div>
       </section>
     </div>
