@@ -9,12 +9,12 @@ import { eq } from 'drizzle-orm'
 import { useRouter } from 'next/navigation'
 import React, { useContext, useEffect, useState } from 'react'
 export interface HISTORY {
-    id:Number,
+    id:number,
     formData:string,
-    aiResponse:string,
+    aiResponse:string | null,
     templateSlug:string,
-    createdBy:string,
-    createdAt: string
+    createdBy:string | null,
+    createdAt: string | null
 }
 
  function UsageTrack() {
@@ -32,10 +32,14 @@ export interface HISTORY {
     },[updateCreditUsage&&user])
 
 
-    const  GetData=async()=>{
-        const result = await db.select().from(AIOutput).where(eq(AIOutput.createdBy,user?.primaryEmailAddress?.emailAddress))
-        GetTotalUsage(result)
+    const GetData = async () => {
+        if (!user?.primaryEmailAddress?.emailAddress) {
+            console.error('User email is not defined')
+            return
+        }
 
+        const result = await db.select().from(AIOutput).where(eq(AIOutput.createdBy, user.primaryEmailAddress.emailAddress))
+        GetTotalUsage(result)
     }
     const GetTotalUsage=(result:HISTORY[])=>{
         let total:number = 0
