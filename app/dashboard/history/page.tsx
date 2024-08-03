@@ -12,10 +12,14 @@ async function History() {
   {
     /* @ts-ignore */
   }
+  if (!user || !user.primaryEmailAddress?.emailAddress) {
+    return <p className="text-center">No history available</p>;
+  }
+
   const HistoryList: HISTORY[] = await db
     .select()
     .from(AIOutput)
-    .where(eq(AIOutput?.createdBy, user?.primaryEmailAddress?.emailAddress))
+    .where(eq(AIOutput.createdBy, user.primaryEmailAddress.emailAddress))
     .orderBy(desc(AIOutput.id));
   const GetTemplateName = (slug: string) => {
     const template: ITemplate | any = Template?.find(
@@ -46,7 +50,7 @@ async function History() {
                   {GetTemplateName(item?.templateSlug)?.name}
                 </p>
                 <p className="col-span-3">
-                  <strong>AI Response:</strong>{truncateText(item.aiResponse, 100)}
+                  <strong>AI Response:</strong>{item.aiResponse ? truncateText(item.aiResponse, 100) : 'No response available'}
                 </p>
                 <p className="col-span-1">
                   <strong>Created At:</strong> {item?.createdAt}
