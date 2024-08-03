@@ -37,7 +37,7 @@ export default function Home() {
 
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-20">
+          <div className="flex flex-col  text-center w-full mb-20">
             <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">
               AI Content Generator Powered by SAMIR
             </h2>
@@ -48,7 +48,7 @@ export default function Home() {
             Unlock your creative potential with our AI content generator. Designed for writers, marketers, and content creators, our advanced tool uses cutting-edge technology to generate high-quality, personalized content in seconds. Whether you need engaging blog posts, compelling ad copy, or captivating social media updates, our AI assists you every step of the way. 
             </p>
           </div>
-          <div className="flex flex-row gap-5">
+          <div className="flex flex-row flex-wrap gap-5">
             <div className="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60 shadow-lg rounded-lg">
               <h2 className="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2">
               Time Efficiency
